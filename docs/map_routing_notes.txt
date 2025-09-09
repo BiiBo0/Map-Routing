@@ -1,0 +1,92 @@
+=====
+file < map points,speed
+queries < at point x , intersection R , shortest path
+
+
+
+Functions:
+	1. Calculate Euclidean distance between two points
+
+	2. Load and construct the graph from the map file , max : 1 person, Ashraf
+
+	3. Load and parse queries from query file , max : same person as load map, Ashraf
+
+	4. Search possible starting nodes within R meters (from source point) max : 1 person, Maryam
+	
+	5. Search possible ending nodes within R meters (from destination point) max : same person as search starting nodes Maryam
+
+	6. Find best path between starting and ending nodes (using Dijkstra or similar) max : 2 persons Ismail, Rana
+
+	7. Format and write the output for a query, max : 1 person , Abdelalem
+
+	8. Measure execution time for queries and total, khelst
+
+
+Classes:
+	1. Road
+	2. Edge
+	3. Stopwatch???
+Files:	
+	- Utils (for conversions)
+FINAL GOAL:
+	SHORTEST PATH IN TERMS OF TIME NOT DISTANCE
+
+my notes(logic): 
+	1. search up how to make a json file in cpp
+	2. search up how to measure exection time for a certain function in cpp (use chrono or Stopwatch class) 
+	3. DO NOT REBUILD GRAPH FOR EACH QUERY
+	4. python libraries to visualize from json:
+		- matplotlib
+		- networkx
+		- plotly
+		- pyvis
+	5. js libraries to visualize from json:
+		- D3.js
+		- Three.js
+		- vis.js
+	6. Road connect intersections both ways from A to B and B to A
+	7. Prefer unordered_map over map
+	
+CHATGPT NOTES(BEST PRACTICE):
+	Graph is undirected (add edges both ways).
+
+	Units must be consistent: meters vs kilometers, minutes vs hours.
+
+	Only one walking phase at the beginning and end — no walking between intersections.
+
+	Dijkstra minimizes time, not distance.
+
+	Output must have exactly two decimal places.
+
+	Separate time measurement for query computation and total program execution.
+
+	Memory optimization is important for large test cases (careful with structures).
+	
+====================================================================================================
+NOTES BASED ON DEEPSEEK:
+	- Parse the graph and construct it (2 steps)
+	- process queries and dijkstra
+	- output and testing
+	
+Bonus Points Strategy:
+
+	Changing-speed Handling: Extend edges to include time intervals and modify Dijkstra to track departure times. (PRIORITY=2)
+
+	Map Visualization: Use a plotting library (e.g., Python's matplotlib with C++ integration). (PRIORITY=1)
+	
+	Faster Implementation: Explore A* with Euclidean heuristics or bidirectional Dijkstra. (PRIORITY=3)
+
+Common Pitfalls:
+
+Forgetting to convert units (km → meters, hours → minutes).
+
+Incorrectly handling floating-point precision in time calculations.
+
+
+
+
+
+
+
+
+
